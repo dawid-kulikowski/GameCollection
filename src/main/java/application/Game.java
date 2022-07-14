@@ -69,10 +69,10 @@ public class Game {
     @Override
     public String toString() {
         return "TITLE: " + title +
-                "\nPLATFORM: " + platform +
-                "\nGAME LANGUAGE: " + gameLanguage +
-                "\nCOVER LANGUAGE: " + coverLanguage +
-                "\nGAME CONDITION: " + gameCondition.toString() +
-                "\nESTIMATED PRICE: " + estimatedPrice;
+                " PLATFORM: " + platform +
+                " GAME LANGUAGE: " + gameLanguage +
+                " COVER LANGUAGE: " + coverLanguage +
+                " GAME CONDITION: " + gameCondition.toString() +
+                " ESTIMATED PRICE: " + estimatedPrice;
     }
 }
