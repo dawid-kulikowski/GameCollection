@@ -1,5 +1,5 @@
 package application;
 
-public enum Language {
+public enum CoverLanguage {
     PL,ENG,DE,FR,ESP;
 }

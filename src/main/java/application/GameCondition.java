@@ -47,6 +47,13 @@ public class GameCondition {
     public void setCoverCondition(double coverCondition) {
         this.coverCondition = coverCondition;
     }
+
+    @Override
+    public String toString() {
+        return  "\nGame Condition:" +
+                "\nDisc Condition: " + discCondition +
+                "\nBox Condition: " + boxCondition +
+                "\nBook Condition: " + bookCondition +
+                "\nCover Condition:" + coverCondition;
+    }
 }
-
-

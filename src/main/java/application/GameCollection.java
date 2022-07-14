@@ -6,23 +6,17 @@ import java.util.Scanner;
 public class GameCollection {
     static Scanner scanner = new Scanner(System.in);
     Game game = new Game();
-    static ArrayList<Game> gameCollection = new ArrayList<>();
+    static ArrayList<Game> gameLibrary = new ArrayList<>();
     public GameCollection() {
     }
 
-    public GameCollection(Scanner scanner, Game game) {
-
-        this.scanner = scanner;
+    public GameCollection( Game game) {
         this.game = game;
     }
 
 
     public Scanner getScanner() {
         return scanner;
-    }
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
     }
 
     public Game getGame() {
@@ -41,10 +35,10 @@ public class GameCollection {
         System.out.println("4. GAME COLLECTION.");
         int choice = scanner.nextInt();
         switch(choice) {
-            case 1: addToCollection(); menu();
-            case 2: deleteTitle();
-            case 3: updateTitle();
-            case 4: showCollection();
+            case 1: addToCollection(); menu(); break;
+            case 2: deleteTitle(); break;
+            case 3: updateTitle(); break;
+            case 4: showCollection();break;
             default: menu();
         }
         addToCollection();
@@ -52,16 +46,43 @@ public class GameCollection {
 
 
      static void addToCollection () {
-//         Scanner scanner = new Scanner(System.in);
          Game game = new Game();
          GameCondition gameCondition = new GameCondition();
-         System.out.println("TITLE: ");
-        game.setTitle(scanner.next());
+         System.out.println("TITLE:");
+         game.setTitle(scanner.next());
         //fix enums
         System.out.println("PLATFORM: ");
-        game.setPlatform(Platform.XONE);
+        switch (scanner.nextInt()) {
+            case 1: game.setPlatform(Platform.PSX); break;
+            case 2: game.setPlatform(Platform.PS2); break;
+            case 3: game.setPlatform(Platform.PS3); break;
+            case 4: game.setPlatform(Platform.PS4); break;
+            case 5: game.setPlatform(Platform.XBOX); break;
+            case 6: game.setPlatform(Platform.XBOX360); break;
+            case 7: game.setPlatform(Platform.XONE); break;
+            case 8: game.setPlatform(Platform.WII); break;
+            case 9: game.setPlatform(Platform.NGC); break;
+            default: return;
+        }
+
         System.out.println("LANGUAGE: ");
-        game.setLanguage(Language.ENG);
+        switch (scanner.nextInt()) {
+            case 1: game.setGameLanguage(GameLanguage.PL); break;
+            case 2: game.setGameLanguage(GameLanguage.ENG); break;
+            case 3: game.setGameLanguage(GameLanguage.DE); break;
+            case 4: game.setGameLanguage(GameLanguage.FR); break;
+            case 5: game.setGameLanguage(GameLanguage.ESP); break;
+            default: return;
+        }
+        System.out.println("COVER LANGUAGE: ");
+        switch (scanner.nextInt()) {
+            case 1: game.setCoverLanguage(CoverLanguage.PL); break;
+            case 2: game.setCoverLanguage(CoverLanguage.ENG); break;
+            case 3: game.setCoverLanguage(CoverLanguage.DE); break;
+            case 4: game.setCoverLanguage(CoverLanguage.FR); break;
+            case 5: game.setCoverLanguage(CoverLanguage.ESP); break;
+            default: return;
+        }
         System.out.println("DISC CONDITION: ");
         gameCondition.setDiscCondition(scanner.nextDouble());
         System.out.println("BOOK CONDITION: ");
@@ -71,7 +92,9 @@ public class GameCollection {
         System.out.println("BOX CONDITION: ");
         gameCondition.setBoxCondition(scanner.nextDouble());
         game.setGameCondition(gameCondition);
-        gameCollection.add(game);
+        System.out.println("CHEAPEST SELL PRICE IN PLN: ");
+        game.setEstimatedPrice(scanner.nextDouble());
+        gameLibrary.add(game);
      }
 
     static void updateTitle(){
@@ -83,10 +106,10 @@ public class GameCollection {
     }
 
     static void showCollection(){
-        for (Game game : gameCollection) {
+        System.out.println("YOUR COLLECTION: \n");
+        for (Game game : gameLibrary) {
             System.out.println(game.toString());
         }
-        System.out.println("Delete");
     }
 
 }
