@@ -72,7 +72,7 @@ public class Game {
                 " PLATFORM: " + platform +
                 " GAME LANGUAGE: " + gameLanguage +
                 " COVER LANGUAGE: " + coverLanguage +
-                " GAME CONDITION: " + gameCondition.toString() +
+                "\nGAME CONDITION: " + gameCondition.toString() +
                 " ESTIMATED PRICE: " + estimatedPrice;
     }
 }

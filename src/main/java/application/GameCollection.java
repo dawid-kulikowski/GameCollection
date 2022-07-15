@@ -1,12 +1,13 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class GameCollection {
     static Scanner scanner = new Scanner(System.in);
     Game game = new Game();
-    static ArrayList<Game> gameLibrary = new ArrayList<>();
+    static List<Game> gameLibrary = new ArrayList<>();
     public GameCollection() {
     }
 
@@ -51,7 +52,7 @@ public class GameCollection {
          System.out.println("TITLE:");
          game.setTitle(scanner.next());
         //fix enums
-        System.out.println("PLATFORM: ");
+        System.out.println("PLATFORM: \n1. PSX \n2. PS2\n3. PS3 \n4. PS4\n5. XBOX \n6. XBOX 360\n7. XBOX ONE\n7. WII \n4. NGC");
         switch (scanner.nextInt()) {
             case 1: game.setPlatform(Platform.PSX); break;
             case 2: game.setPlatform(Platform.PS2); break;
@@ -65,7 +66,7 @@ public class GameCollection {
             default: return;
         }
 
-        System.out.println("LANGUAGE: ");
+        System.out.println("LANGUAGE: \n1. PL \n2. ENG\n3. DE \n4. FR\n5. ESP");
         switch (scanner.nextInt()) {
             case 1: game.setGameLanguage(GameLanguage.PL); break;
             case 2: game.setGameLanguage(GameLanguage.ENG); break;
@@ -74,7 +75,7 @@ public class GameCollection {
             case 5: game.setGameLanguage(GameLanguage.ESP); break;
             default: return;
         }
-        System.out.println("COVER LANGUAGE: ");
+        System.out.println("COVER LANGUAGE: \n1. PL \n2. ENG\n3. DE \n4. FR\n5. ESP");
         switch (scanner.nextInt()) {
             case 1: game.setCoverLanguage(CoverLanguage.PL); break;
             case 2: game.setCoverLanguage(CoverLanguage.ENG); break;

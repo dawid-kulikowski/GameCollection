@@ -50,9 +50,9 @@ public class GameCondition {
 
     @Override
     public String toString() {
-        return " DISC CONDITION: " + discCondition +
-                " BOX CONDITION: " + boxCondition +
-                " BOOK CONDITION: " + bookCondition +
-                " COVER CONDITION: " + coverCondition;
+        return " DISC: " + discCondition +
+                " BOX: " + boxCondition +
+                " BOOK: " + bookCondition +
+                " COVER: " + coverCondition;
     }
 }
